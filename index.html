@@ -1,0 +1,2485 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Amity Online MBA
+  </title>
+  <link href="images/favicon.png" rel="icon" type="image/x-icon"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <!-- Google Tag Manager -->
+  <script async="" src="js/clarity.js">
+  </script>
+  <script async="" src="js/1893666021343054">
+  </script>
+  <script async="" src="js/fbevents.js">
+  </script>
+  <script async="" src="js/wfmoqr582c" type="text/javascript">
+  </script>
+  <script async="" src="js/js" type="text/javascript">
+  </script>
+  <script async="" src="js/gtm.js">
+  </script>
+  <script>
+   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WV8M7MZ2');
+  </script>
+  <!-- End Google Tag Manager -->
+  <!--whatsapp chatbot-->
+  <style>
+   /* ===== WHATSAPP WIDGET ===== */
+
+/* DESKTOP: Fixed left-center circle */
+.wa-widget {
+  position: fixed;
+  left: auto;
+  right: 20px;
+  top: auto;
+  bottom: 90px;
+  transform: none;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+/* Popup card - appears to the right of circle */
+.wa-bubble {
+  position: absolute;
+  right: 0;
+  bottom: 75px;
+  top: auto;
+  left: auto;
+  transform: none;
+  background: #1a0533;
+  border: 1px solid rgba(37,211,102,0.3);
+  border-radius: 16px;
+  width: 230px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  display: none;
+  animation: waPop .4s cubic-bezier(.22,.9,.36,1.1) both;
+}
+.wa-bubble.show { display: block; }
+
+.wa-shimmer-bar {
+  height: 3px;
+  background: linear-gradient(90deg,#25D366,#128C7E,#25D366);
+  background-size: 200%;
+  animation: waShimmerBar 2s linear infinite;
+}
+.wa-bubble-inner { padding: 14px 14px 13px; }
+
+.wa-bubble-top {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+}
+.wa-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.wa-avatar img { width: 18px; height: 18px; }
+
+.wa-info strong {
+  display: block;
+  font-family: -apple-system,'Segoe UI',sans-serif;
+  font-size: 12px; font-weight: 700; color: #fff;
+}
+.wa-info span {
+  font-family: -apple-system,'Segoe UI',sans-serif;
+  font-size: 10px; color: #25D366;
+  display: flex; align-items: center; gap: 4px;
+}
+.wa-online-dot {
+  width: 6px; height: 6px; background: #25D366;
+  border-radius: 50%;
+  animation: waDotPulse 1.8s ease-in-out infinite;
+  display: inline-block;
+}
+
+.wa-bubble p {
+  font-family: -apple-system,'Segoe UI',sans-serif;
+  font-size: 12.5px; color: rgba(255,255,255,0.85);
+  margin: 0 0 12px; line-height: 1.5;
+}
+.wa-bubble p span { color: #4EE88A; font-weight: 600; }
+
+.wa-chat-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 7px;
+  background: #25D366; color: #fff;
+  font-size: 13px; font-weight: 700;
+  padding: 9px 0; border-radius: 10px;
+  text-decoration: none;
+  font-family: -apple-system,'Segoe UI',sans-serif;
+  transition: background .2s, transform .15s;
+  width: 100%;
+}
+.wa-chat-btn:hover { background: #1ebe57; transform: scale(1.02); }
+.wa-chat-btn svg { width: 15px; height: 15px; }
+
+.wa-close-btn {
+  position: absolute; top: 8px; right: 10px;
+  background: none; border: none;
+  font-size: 16px; color: rgba(255,255,255,0.35);
+  cursor: pointer; padding: 0; line-height: 1;
+  transition: color .2s;
+}
+.wa-close-btn:hover { color: #fff; }
+
+/* THE CIRCLE BUTTON */
+.wa-circle {
+  width: 62px; height: 62px; border-radius: 50%;
+  background: #25D366;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px 24px rgba(37,211,102,0.5);
+  transition: transform .2s, box-shadow .2s;
+  animation: waSlideIn .7s 1s cubic-bezier(.22,.9,.36,1.1) both;
+  text-decoration: none;
+}
+.wa-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 36px rgba(37,211,102,0.7);
+}
+.wa-circle svg { width: 32px; height: 32px; animation: waBounce 2.2s ease-in-out infinite; }
+
+/* Ripple rings */
+.wa-ring {
+  position: absolute;
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: waRipple 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.wa-ring:nth-child(2) { animation-delay: .8s; }
+.wa-ring:nth-child(3) { animation-delay: 1.6s; }
+
+/* Red notification dot */
+.wa-notif-dot {
+  position: absolute; top: 2px; right: 2px;
+  width: 14px; height: 14px;
+  background: #FF3B30; border-radius: 50%;
+  border: 2px solid #fff;
+  animation: waDotPulse 1.8s ease-in-out infinite;
+}
+
+/* Label below circle - desktop only */
+.wa-circle-label {
+  font-family: -apple-system,'Segoe UI',sans-serif;
+  font-size: 10px; color: rgba(255,255,255,0.7);
+  text-align: center; letter-spacing: 0.03em;
+  background: rgba(0,0,0,0.35);
+  padding: 3px 8px; border-radius: 20px;
+  white-space: nowrap;
+  animation: waSlideIn .7s 1.2s cubic-bezier(.22,.9,.36,1.1) both;
+}
+
+/* ---- ANIMATIONS ---- */
+@keyframes waSlideIn {
+  from { opacity:0; transform:translateX(-30px) scale(.8); }
+  to   { opacity:1; transform:translateX(0) scale(1); }
+}
+@keyframes waPop {
+  from { opacity:0; transform:scale(.85) translateY(10px); }
+  to   { opacity:1; transform:scale(1) translateY(0); }
+}
+@keyframes waRipple {
+  0%   { transform:scale(1); opacity:.7; }
+  100% { transform:scale(2.2); opacity:0; }
+}
+@keyframes waBounce {
+  0%,100% { transform:translateY(0); }
+  50%      { transform:translateY(-4px); }
+}
+@keyframes waDotPulse {
+  0%,100% { transform:scale(1); }
+  50%      { transform:scale(1.3); }
+}
+@keyframes waShimmerBar {
+  0%   { background-position:0%; }
+  100% { background-position:200%; }
+}
+
+/* ===== MOBILE: Bottom-right floating circle only ===== */
+@media (max-width: 768px) {
+ .wa-widget {
+    position: fixed;
+    left: auto;
+    right: 11px;
+    bottom: 120px;
+    top: auto;
+    transform: none;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+  }
+  .wa-circle {
+    width: 56px; height: 56px;
+    animation: waMobileIn .6s 1s cubic-bezier(.22,.9,.36,1.1) both;
+  }
+  .wa-circle svg { width: 28px; height: 28px; }
+  .wa-ring { width:56px; height:56px; }
+  .wa-circle-label { display: none; }
+
+  /* Mobile popup - appears above the circle */
+  .wa-bubble {
+    position: static;
+    transform: none;
+    width: 210px;
+    margin-bottom: 10px;
+  }
+  .wa-bubble.show { display: block; }
+}
+
+@keyframes waMobileIn {
+  from { opacity:0; transform:scale(.5) rotate(-20deg); }
+  to   { opacity:1; transform:scale(1) rotate(0deg); }
+}
+  </style>
+  <!--chatbot-->
+  <style>
+   @media (max-width: 768px) {
+	
+
+ .onlymobilepopupwq{
+       display:block !Important;
+   }
+	}
+   
+   
+   
+   
+   
+   
+   .onlymobilepopupwq{
+       display:none;
+   }
+   
+.send-box button{
+    align-items: center;
+    /*display: flex ;*/
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    /*background: none;*/
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    cursor:pointer;
+    
+    background: #063C84;
+    border-radius: 16px;
+    width: 89%;
+ 
+}
+
+.send-box {
+    
+    padding: 5px;
+    /*background: #D4202D;*/
+    border-radius: 16px;
+    width: 89%;
+    margin: auto;
+}
+
+.chat-icon img{
+    width:42px;
+}
+
+.chat-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #063C84;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 1000;
+    }
+
+    .chat-icon:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-popup {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 329px;
+      height: 468px;
+      display: none;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .chat-header {
+      background-color: #063C84;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .chat-header .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      transition: color 0.2s ease;
+    }
+
+    .chat-header .close-btn:hover {
+      color: red;
+    }
+
+    .chat-header .chat-icon-top {
+      position: absolute;
+      left: 15px;
+      top: 10px;
+      width: 50px;
+      /*height: 35px;*/
+    }
+
+    .chat-body {
+      height: 330px;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: #f9f9f9;
+      border-top: 2px solid #f0f0f0;
+    }
+
+    .chat-message {
+      padding: 12px 15px;
+      border-radius: 20px;
+      max-width: 90%;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      word-wrap: break-word;
+    }
+
+    .bot-message {
+      background-color: #063C84;
+      align-self: flex-start;
+      color: white;
+    }
+
+    .user-message {
+      background-color: #fbbf24;
+      color: white;
+      align-self: flex-end;
+    }
+
+    .chat-footer {
+      padding: 15px;
+      display: flex;
+      gap: 10px;
+      background-color: white;
+      border-top: 2px solid #063C84;
+    }
+
+    .chat-footer input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .chat-footer input:focus {
+      border-color: #063C84;
+    }
+
+    .chat-footer button {
+      padding: 10px 16px;
+      background-color: #063C84;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    /*.chat-footer button:hover {*/
+    /*  background-color: #a51824;*/
+    /*  transform: scale(1.05);*/
+    /*}*/
+
+    .success-message {
+      text-align: center;
+      font-size: 16px;
+      color: #28a745;
+      margin-top: 15px;
+      font-weight: 700;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /*::-webkit-scrollbar-thumb {*/
+    /*  background: #D4202D;*/
+    /*  border-radius: 4px;*/
+    /*}*/
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #a51824;
+    }
+
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        
+        .chat-icon img{
+    width:30px;
+}
+
+            .chatbot-container {
+                width: 100%;
+                bottom: 10px;
+                right: 10px;
+            }
+
+            .chatbot-header {
+                font-size: 14px;
+            }
+
+            .chatbox {
+                height: 300px;
+            }
+
+            .message {
+                max-width: 90%;
+            }
+
+            .input-container input {
+                font-size: 14px;
+            }
+
+            .input-container button {
+                font-size: 14px;
+                padding: 7px 12px;
+            }
+          
+        }
+
+        @media (max-width: 400px) {
+            .chatbot-header {
+                font-size: 12px;
+            }
+
+            .message {
+                max-width: 95%;
+            }
+        }
+        
+       /* Mobile responsiveness */
+@media (max-width: 600px) {
+  .chat-popup {
+          width: 68%;
+        bottom: 61px;
+        right: 18px;
+        height: 385px;
+  }
+
+  .chat-header {
+    font-size: 16px;
+    /*padding: 12px;*/
+  }
+
+  .chat-body {
+    padding: 10px;
+    gap: 10px;
+    height: 270px;
+    font-size: 14px;
+  }
+
+  .chat-footer {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between; /* Added this to ensure button and input stay on one line */
+  }
+
+  .chat-footer input {
+    flex: 1;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .chat-footer button {
+    font-size: 14px;
+    padding: 8px 12px;
+    background-color: #063C84;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  /*.chat-footer button:hover {*/
+  /*  background-color: #a51824;*/
+  /*  transform: scale(1.05);*/
+  /*}*/
+
+  .chat-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .chat-header .close-btn {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .chat-popup {
+    width: 70%;
+    height: 341px;
+  }
+
+  .chat-header {
+    font-size: 14px;
+    /*padding: 10px;*/
+  }
+
+  .chat-body {
+    height: 230px;
+  }
+
+  .chat-footer input {
+    font-size: 13px;
+    padding: 7px;
+  }
+
+  .chat-footer button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .chat-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+
+  .chat-header .close-btn {
+    font-size: 16px;
+  }
+}
+ 
+ .options-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .option-circle {
+    padding: 5px 6px;
+    background: #063C84;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+    border:2px solid #00FFFF;
+  }
+  .option-circle:hover {
+    background: #cc0000;
+  }
+  
+  .chat-header li {
+    font-size: 11px;
+    color: #00FFFF;
+    text-align: justify;
+    margin-left: 88px;
+}
+  .chat-notification {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    animation: pop 0.3s ease-out;
+}   
+.chat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.option-btn {
+  background: #fbbf24;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.option-btn:hover {
+  background: #1f3b6d;
+}
+#chatBody {
+ 
+  overflow-y: auto;
+}
+  </style>
+  <script async="" src="js/js_7.js" type="text/javascript">
+  </script>
+  <script async="" src="js/js_8.js" type="text/javascript">
+  </script>
+ </head>
+ <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+   <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WV8M7MZ2" style="display:none;visibility:hidden" width="0">
+   </iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <!-- Chat icon -->
+  <div class="chat-icon" onclick="toggleChatPopup()">
+   <a href="javascript:void(0)">
+    <img alt="Chat" src="images/Mask-group-14.png"/>
+    <span class="chat-notification" id="chatNotification">
+     1
+    </span>
+   </a>
+  </div>
+  <!-- Chat popup -->
+  <div class="chat-popup" id="chatPopup">
+   <div class="chat-header">
+    <img alt="Chat Icon" class="chat-icon-top" src="images/wqlknf.png"/>
+    Amity Online
+    <li>
+     Online
+    </li>
+    <span class="close-btn" onclick="toggleChatPopup()">
+     ✖
+    </span>
+   </div>
+   <div class="chat-body" id="chatBody">
+   </div>
+   <div class="chat-footer">
+    <input id="userInput" placeholder="Type your message..." type="text"/>
+    <button onclick="handleUserInput()">
+     Send
+    </button>
+   </div>
+  </div>
+  <!-- Hidden lead form -->
+  <form action="chatbot-verify.php" id="leadForm" method="POST" style="display: none;">
+   <input id="fname" name="name" type="hidden"/>
+   <input id="email" name="email" type="hidden"/>
+   <input id="phoneno" name="mobile" type="hidden"/>
+   <input id="city" name="city" type="hidden"/>
+   <input id="program" name="program" type="hidden"/>
+   <input id="utm_source" name="utm_source" type="hidden" value="google-ads"/>
+   <input id="utm_campaign" name="utm_campaign" type="hidden" value=""/>
+   <input id="utm_content" name="utm_content" type="hidden" value="Brand"/>
+   <input id="utm_medium" name="utm_medium" type="hidden" value="CPC"/>
+   <input id="utm_keyword" name="utm_keyword" type="hidden" value=""/>
+   <input id="gclid" name="gclid" type="hidden" value="CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE"/>
+   <input id="current_url" name="current_url" type="hidden" value="https://amityonlinemba.hikeeducation.com/?utm_source=google-ads&amp;utm_medium=CPC&amp;utm_content=Brand&amp;utm_agid=198785733791&amp;utm_term=amity%20online&amp;gad_source=1&amp;gad_campaignid=23789810087&amp;gbraid=0AAAAAqZcYHtcnrnjyWxCEJJUjfhYvDHUo&amp;gclid=CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE&amp;fbclid=PAT01DUATBlX5leHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafs1PfqltyTYmhqVCq8ZMoSE4o4Z7-EP_PZpGaHqBs8-KgMh3-cXLBK86K28g_aem_vwaDKLbcpmrqnLOssqlC6Q"/>
+  </form>
+  <script>
+   // ── UTM + URL capture (runs immediately on page load) ────────────────────
+  function getParam(param) {
+    return new URLSearchParams(window.location.search).get(param) || "";
+  }
+
+  document.getElementById("utm_source").value   = getParam("utm_source");
+  document.getElementById("utm_campaign").value = getParam("utm_campaign");
+  document.getElementById("utm_content").value  = getParam("utm_content");
+  document.getElementById("utm_medium").value   = getParam("utm_medium");
+  document.getElementById("utm_keyword").value  = getParam("utm_keyword");
+  document.getElementById("gclid").value        = getParam("gclid");
+  document.getElementById("current_url").value  = window.location.href;
+  </script>
+  <script>
+   // ── Chat popup toggle ────────────────────────────────────────────────────
+  const popupSound = new Audio('https://audio-previews.elements.envatousercontent.com/files/357949926/preview.mp3');
+
+  function toggleChatPopup() {
+    const chatPopup = document.getElementById("chatPopup");
+    const isOpening = chatPopup.style.display === "none" || chatPopup.style.display === "";
+    chatPopup.style.display = isOpening ? "block" : "none";
+    if (isOpening) {
+      popupSound.play().catch(e => console.error("Sound error:", e));
+      startChat();
+    }
+  }
+
+  function openChatPopup() {
+    const chatPopup = document.getElementById("chatPopup");
+    if (chatPopup) {
+      chatPopup.style.display = "block";
+      startChat();
+    }
+  }
+
+  function openFormPopup() {
+    const popupForm = document.getElementById("popupForm");
+    const overlay   = document.getElementById("overlay");
+    if (popupForm && overlay) {
+      popupForm.style.display = "block";
+      overlay.style.display  = "block";
+    }
+  }
+
+  function closePopup() {
+    document.getElementById("popupForm").style.display = "none";
+    document.getElementById("overlay").style.display   = "none";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(openChatPopup, 1000000);   // 1s me chatbot open
+    setTimeout(openFormPopup, 20000000);  // 20s me form open
+  });
+  </script>
+  <script>
+   const chatBody  = document.getElementById("chatBody");
+const userInput = document.getElementById("userInput");
+
+// ✅ QUESTIONS
+const questions = [
+  "Hi, Welcome to Amity Online! What's your name?",
+  "Nice to meet you! What's your email?",
+  "Got it. What's your mobile number?",
+  "Great! Which city are you from?",
+  "Which course are you interested in?"
+];
+
+// ✅ OPTIONS (alag define hoga)
+const courseOptions = ["Online MBA", "Online MCA", "Online BBA", "Online BCA", "Other"];
+
+// ✅ VALIDATIONS
+const validations = [
+  (v) => /^[a-zA-Z\s]+$/.test(v) || "Please enter a valid name.",
+  (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || "Invalid email.",
+  (v) => {
+    if (!/^\d{10}$/.test(v)) return "Enter valid mobile";
+    if (!/^[6-9]/.test(v)) return "Invalid mobile";
+    return true;
+  },
+  (v) => v.trim() !== "" || "Enter city"
+];
+
+let userResponses = [];
+let currentQuestionIndex = 0;
+
+// ✅ START
+function startChat() {
+  chatBody.innerHTML = "";
+  currentQuestionIndex = 0;
+  userResponses = [];
+  userInput.style.display = "block"; // important
+  displayMessage(questions[0], "bot");
+}
+
+// ✅ MESSAGE SHOW
+function displayMessage(message, sender) {
+  const div = document.createElement("div");
+  div.className = `chat-message ${sender === "bot" ? "bot-message" : "user-message"}`;
+  div.textContent = message;
+  chatBody.appendChild(div);
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// ✅ HANDLE INPUT
+function handleUserInput() {
+  const input = userInput.value.trim();
+  if (!input) return;
+
+  const result = validations[currentQuestionIndex](input);
+  if (result !== true) {
+    displayMessage(result, "bot");
+    return;
+  }
+
+  displayMessage(input, "user");
+  userResponses.push(input);
+  userInput.value = "";
+
+  if (currentQuestionIndex < questions.length - 1) {
+    currentQuestionIndex++;
+
+    setTimeout(() => {
+      displayMessage(questions[currentQuestionIndex], "bot");
+
+      // ✅ COURSE STEP
+      if (currentQuestionIndex === 4) {
+        userInput.style.display = "none";
+        showCourseOptions();
+      } else {
+        userInput.focus();
+      }
+
+    }, 500);
+  }
+}
+
+function showCourseOptions() {
+  const wrapper = document.createElement("div");
+  wrapper.className = "chat-options";
+
+  courseOptions.forEach(option => {
+    const btn = document.createElement("button");
+    btn.className = "option-btn";
+    btn.innerText = option;
+
+    btn.onclick = () => {
+      displayMessage(option, "user");
+      userResponses.push(option);
+
+      wrapper.remove();
+
+      setTimeout(() => {
+        displayMessage("Thank you! Submitting your details...", "bot");
+        submitLead();
+      }, 500);
+    };
+
+    wrapper.appendChild(btn);
+  });
+
+  chatBody.appendChild(wrapper);
+
+  // ✅ 🔥 SCROLL FIX (ADD THIS)
+  setTimeout(() => {
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 100);
+}
+
+// ✅ SUBMIT
+function submitLead() {
+  document.getElementById("fname").value   = userResponses[0];
+  document.getElementById("email").value   = userResponses[1];
+  document.getElementById("phoneno").value = userResponses[2];
+  document.getElementById("city").value    = userResponses[3];
+  document.getElementById("program").value = userResponses[4];
+
+  document.getElementById("leadForm").submit();
+}
+
+// ✅ ENTER KEY
+userInput.addEventListener("keypress", function (e) {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleUserInput();
+  }
+});
+  </script>
+  <!-- STICKY HEADER -->
+  <header>
+   <img alt="Amity University Online" class="logo" src="images/amitylogo.png"/>
+   <a class="enquire-btn ws-open-btn" href="#">
+    ENQUIRE NOW  →
+   </a>
+  </header>
+  <!-- ADMISSION BANNER -->
+  <div class="admission-banner">
+   Admission Open - Limited Seats
+  </div>
+  <!-- PAGE SECTION: white/gray space on L & R -->
+  <div class="page-section">
+   <section class="hero">
+    <!-- COL 1: Girl Image -->
+    <div class="hero-girl">
+     <div class="girl-circle">
+     </div>
+     <img alt="MBA Student" src="images/bannerimage.png"/>
+    </div>
+    <!-- COL 2: Text Content -->
+    <div class="hero-text">
+     <p class="pg-label">
+      PG PROGRAM
+     </p>
+     <h1 class="hero-title">
+      Lead the Future with India's
+      <br/>
+      #1 Online MBA
+     </h1>
+     <span class="ai-badge">
+      Next-Gen MBA for an AI-Ready Career
+     </span>
+     <div class="duration-row">
+      <div class="hourglass-icon">
+       <svg fill="#0f2060" height="18" viewbox="0 0 24 24" width="18">
+        <path d="M6 2v6l4 4-4 4v6h12v-6l-4-4 4-4V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z">
+        </path>
+       </svg>
+      </div>
+      <span class="duration-text">
+       DURATION: 2 YEARS
+      </span>
+     </div>
+     <button class="btn-brochure ws-open-btn">
+      DOWNLOAD BROCHURE
+      <svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+       <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z">
+       </path>
+      </svg>
+     </button>
+     <div class="qs-card">
+      <div class="qs-left">
+       <div class="qs-icon">
+        QS
+       </div>
+       <div class="qs-text">
+        India's only Online MBA
+        <br/>
+        Ranked by QS, 2025
+       </div>
+      </div>
+      <div class="qs-right">
+       <div class="qs-right-text">
+        Asia Pacific
+        <br/>
+        Top 10
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- COL 3: Application Form -->
+    <div class="hero-form">
+     <form action="submit.php" class="lead-form" method="POST">
+      <div class="form-card">
+       <h3 style="color: #1f3b6d;">
+        APPLY FOR ONLINE MBA
+       </h3>
+       <p class="sub">
+        Get information about programs and admissions
+       </p>
+       <!-- NAME -->
+       <div class="fg">
+        <label>
+         Full Name
+        </label>
+        <input name="name" placeholder="Enter Your Full Name" required="" type="text"/>
+       </div>
+       <!-- EMAIL -->
+       <div class="fg">
+        <label>
+         Email ID
+        </label>
+        <input name="email" placeholder="Email ID" required="" type="email"/>
+       </div>
+       <!-- MOBILE -->
+       <div class="fg">
+        <label>
+         Mobile Number
+        </label>
+        <div class="phone-wrap">
+         <div class="phone-prefix">
+          <img alt="IN" src="images/in.png"/>
+          +91 -
+         </div>
+         <input inputmode="numeric" maxlength="10" name="mobile" placeholder="Mobile Number" required="" type="tel"/>
+        </div>
+       </div>
+       <!-- TWO COL -->
+       <div class="two-col">
+        <div class="fg">
+         <label>
+          Select Course
+         </label>
+         <div class="sel-wrap">
+          <select name="program" required="">
+           <option disabled="" selected="" value="">
+            Select Course
+           </option>
+           <option value="Online MBA">
+            Online MBA
+           </option>
+           <option value="Online MCA">
+            Online MCA
+           </option>
+           <option value="Online BBA">
+            Online BBA
+           </option>
+           <option value="Online BCA">
+            Online BCA
+           </option>
+           <option value="Other">
+            Other
+           </option>
+          </select>
+         </div>
+        </div>
+        <div class="fg">
+         <label>
+          State
+         </label>
+         <div class="sel-wrap">
+          <select name="state" required="">
+           <option disabled="" selected="" value="">
+            Select State
+           </option>
+           <!-- STATES -->
+           <option>
+            Andhra Pradesh
+           </option>
+           <option>
+            Arunachal Pradesh
+           </option>
+           <option>
+            Assam
+           </option>
+           <option>
+            Bihar
+           </option>
+           <option>
+            Chhattisgarh
+           </option>
+           <option>
+            Goa
+           </option>
+           <option>
+            Gujarat
+           </option>
+           <option>
+            Haryana
+           </option>
+           <option>
+            Himachal Pradesh
+           </option>
+           <option>
+            Jharkhand
+           </option>
+           <option>
+            Karnataka
+           </option>
+           <option>
+            Kerala
+           </option>
+           <option>
+            Madhya Pradesh
+           </option>
+           <option>
+            Maharashtra
+           </option>
+           <option>
+            Manipur
+           </option>
+           <option>
+            Meghalaya
+           </option>
+           <option>
+            Mizoram
+           </option>
+           <option>
+            Nagaland
+           </option>
+           <option>
+            Odisha
+           </option>
+           <option>
+            Punjab
+           </option>
+           <option>
+            Rajasthan
+           </option>
+           <option>
+            Sikkim
+           </option>
+           <option>
+            Tamil Nadu
+           </option>
+           <option>
+            Telangana
+           </option>
+           <option>
+            Tripura
+           </option>
+           <option>
+            Uttar Pradesh
+           </option>
+           <option>
+            Uttarakhand
+           </option>
+           <option>
+            West Bengal
+           </option>
+           <!-- UNION TERRITORIES -->
+           <option>
+            Andaman and Nicobar Islands
+           </option>
+           <option>
+            Chandigarh
+           </option>
+           <option>
+            Dadra and Nagar Haveli and Daman and Diu
+           </option>
+           <option>
+            Delhi
+           </option>
+           <option>
+            Jammu and Kashmir
+           </option>
+           <option>
+            Ladakh
+           </option>
+           <option>
+            Lakshadweep
+           </option>
+           <option>
+            Puducherry
+           </option>
+          </select>
+         </div>
+        </div>
+       </div>
+       <!-- CHECKBOX -->
+       <!--<div class="chk-row">-->
+       <!--  <input type="checkbox" name="graduate" required>-->
+       <!--  <label>I am a graduate with min. 40% marks*</label>-->
+       <!--</div>-->
+       <div class="chk-row">
+        <input checked="" name="terms" required="" type="checkbox"/>
+        <label>
+         I agree to get updates from counsellor
+        </label>
+       </div>
+       <!-- ðŸ”¥ HIDDEN TRACKING -->
+       <input class="utm_source" name="utm_source" type="hidden" value="google-ads"/>
+       <input class="utm_medium" name="utm_medium" type="hidden" value="CPC"/>
+       <input class="utm_campaign" name="utm_campaign" type="hidden" value=""/>
+       <input class="utm_adgroup" name="utm_adgroup" type="hidden" value=""/>
+       <input class="utm_term" name="utm_term" type="hidden" value="amity online"/>
+       <input class="utm_content" name="utm_content" type="hidden" value="Brand"/>
+       <input class="gclid" name="gclid" type="hidden" value="CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE"/>
+       <input class="utm_creative" name="utm_creative" type="hidden" value=""/>
+       <input class="page_url" name="page_url" type="hidden" value="https://amityonlinemba.hikeeducation.com/?utm_source=google-ads&amp;utm_medium=CPC&amp;utm_content=Brand&amp;utm_agid=198785733791&amp;utm_term=amity%20online&amp;gad_source=1&amp;gad_campaignid=23789810087&amp;gbraid=0AAAAAqZcYHtcnrnjyWxCEJJUjfhYvDHUo&amp;gclid=CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE&amp;fbclid=PAT01DUATBlX5leHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafs1PfqltyTYmhqVCq8ZMoSE4o4Z7-EP_PZpGaHqBs8-KgMh3-cXLBK86K28g_aem_vwaDKLbcpmrqnLOssqlC6Q"/>
+       <input class="ip_address" name="ip_address" type="hidden" value="13.221.80.184"/>
+       <!-- SUBMIT -->
+       <button class="submit-btn prevent-multiple" type="submit">
+        <svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z">
+         </path>
+        </svg>
+        Submit
+       </button>
+      </div>
+     </form>
+    </div>
+   </section>
+  </div>
+  <!-- /page-section -->
+  <section class="stats-section">
+   <div class="stats-container">
+    <div class="stat-box">
+     <h2>
+      30+
+     </h2>
+     <p>
+      Years of Excellence
+     </p>
+    </div>
+    <div class="stat-box">
+     <h2>
+      60+
+     </h2>
+     <p>
+      Programs &amp; Specialisations
+     </p>
+    </div>
+    <div class="stat-box">
+     <h2>
+      1.60 Lac+
+     </h2>
+     <p>
+      Learners
+     </p>
+    </div>
+    <div class="stat-box">
+     <h2>
+      3.5L+
+     </h2>
+     <p>
+      Strong Alumni Network
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="why-amity">
+   <div class="why-top">
+    <h2>
+     Why Choose Amity Online?
+    </h2>
+    <p>
+     Online methods empower students to learn through innovative approaches.
+    </p>
+   </div>
+   <div class="why-wrapper">
+    <div class="why-item">
+     <h3>
+      Project-Based Learning
+     </h3>
+     <p>
+      Live Industry Projects. Real Impact. Solve real business challenges with industry experts. Earn project certifications and build a recruiter-ready portfolio before you graduate.
+     </p>
+    </div>
+    <div class="why-item">
+     <h3>
+      Amigo: Learning On-the-Go
+     </h3>
+     <p>
+      The Amigo app enables flexible, mobile-first learning-join live classes, monitor your progress, and access study materials anytime, anywhere.
+     </p>
+    </div>
+    <div class="why-item">
+     <h3>
+      Internship Opportunities
+     </h3>
+     <p>
+      Gain hands-on experience through curated internships with top organizations, helping you build practical skills and stand out.
+     </p>
+    </div>
+    <div class="why-item">
+     <h3>
+      QS-Ranked Online MBA
+     </h3>
+     <p>
+      Amity Online offers India's only Online MBA ranked in the QS Asia Pacific Top 10, recognized globally for academic excellence, and digital innovation.
+     </p>
+    </div>
+    <div class="why-item">
+     <h3>
+      Prof. Ami: AI-Powered Personal Tutor
+     </h3>
+     <p>
+      Introducing Prof. Ami-your 24/7 AI mentor for instant doubt resolution, personalized study guidance, and smarter academic support.
+     </p>
+    </div>
+    <div class="why-item">
+     <h3>
+      Industry-Relevant Certifications
+     </h3>
+     <p>
+      Enhance your profile with industry-relevant certifications from leading partners, seamlessly integrated into your program.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="mba-section">
+   <div class="mba-container">
+    <!-- LEFT -->
+    <div class="mba-left">
+     <h2>
+      Explore the MBA Curriculum Designed for Real-World Skills
+     </h2>
+     <!-- TABS -->
+     <div class="tabs">
+      <button class="tab-btn active" onclick="openTab('year1')">
+       Year 1
+      </button>
+      <button class="tab-btn" onclick="openTab('year2')">
+       Year 2
+      </button>
+     </div>
+     <!-- YEAR 1 -->
+     <div class="tab-content active" id="year1">
+      <div class="semester">
+       <span>
+        Semester 1
+       </span>
+       <ul>
+        <li>
+         Managerial Economics
+        </li>
+        <li>
+         Statistics for Management
+        </li>
+        <li>
+         Professional communication
+        </li>
+        <li>
+         Accounting for Managers
+        </li>
+        <li>
+         Marketing Management
+        </li>
+       </ul>
+      </div>
+      <div class="semester">
+       <span>
+        Semester 2
+       </span>
+       <ul>
+        <li>
+         Legal Aspects of Business
+        </li>
+        <li>
+         Business Research Methods
+        </li>
+        <li>
+         Financial Management
+        </li>
+        <li>
+         Human Resource Management
+        </li>
+        <li>
+         Conflict Resolution and Management
+        </li>
+       </ul>
+      </div>
+     </div>
+     <!-- YEAR 2 -->
+     <div class="tab-content" id="year2">
+      <div class="semester">
+       <span>
+        Semester 3
+       </span>
+       <ul>
+        <li>
+         Strategic Management
+        </li>
+        <li>
+         Minor Project
+        </li>
+        <li>
+         Professional Ethics
+        </li>
+        <li>
+         Specialization Elective 1
+        </li>
+        <li>
+         Specialization Elective 2
+        </li>
+        <li>
+         Specialization Elective 3
+        </li>
+        <li>
+         Specialization Elective 4
+        </li>
+       </ul>
+      </div>
+      <div class="semester">
+       <span>
+        Semester 4
+       </span>
+       <ul>
+        <li>
+         Major Project
+        </li>
+        <li>
+         Management in Action: Social, Economic, and Ethical Issues
+        </li>
+        <li>
+         Digital Marketing
+        </li>
+        <li>
+         Specialization Elective 1
+        </li>
+        <li>
+         Specialization Elective 2
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="mba-right">
+     <div class="certificate-box">
+      <img src="images/certificate.png"/>
+     </div>
+     <p class="certificate-text">
+      UGC-entitled online degree, equivalent to on-campus programs.
+     </p>
+    </div>
+   </div>
+  </section>
+  <section class="spec-premium-sec">
+   <div class="spec-premium-wrap">
+    <h2>
+     Upskill With Industry-Aligned Specializations
+    </h2>
+    <div class="spec-premium-grid">
+     <!-- FEATURED -->
+     <div class="spec-item featured">
+      Business Analytics
+     </div>
+     <div class="spec-item">
+      Data Science
+     </div>
+     <div class="spec-item">
+      Digital Marketing Management
+     </div>
+     <div class="spec-item">
+      Entrepreneurship and Leadership Management
+     </div>
+     <div class="spec-item">
+      Finance and Accounting Management
+     </div>
+     <div class="spec-item">
+      Human Resource Management
+     </div>
+     <div class="spec-item">
+      Information Technology Management
+     </div>
+     <div class="spec-item">
+      International Business Management
+     </div>
+     <div class="spec-item">
+      International Finance (ACCA)
+     </div>
+     <div class="spec-item">
+      Marketing &amp; Sales Management
+     </div>
+     <div class="spec-item">
+      Production and Operations Management
+     </div>
+     <div class="spec-item">
+      Retail Management
+     </div>
+     <div class="spec-item">
+      General Management
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="rank-scroll-sec">
+   <div class="rank-scroll-wrap">
+    <h2>
+     Accreditations &amp; Rankings
+    </h2>
+    <div class="rank-scroll-slider">
+     <div class="rank-scroll-track" style="transform: translateX(-417.5px);">
+      <div class="rank-box">
+       <img src="images/ac4.webp"/>
+       <p>
+        QS Ranked Online MBA
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac5.webp"/>
+       <p>
+        QAA (UK) Accreditation
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac6.webp"/>
+       <p>
+        Times Higher Education Ranking
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac1.webp"/>
+       <p>
+        UGC-Entitled
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac3.webp"/>
+       <p>
+        WES Recognized
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac4.webp"/>
+       <p>
+        QS Ranked Online MBA
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac5.webp"/>
+       <p>
+        QAA (UK) Accreditation
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac6.webp"/>
+       <p>
+        Times Higher Education Ranking
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac1.webp"/>
+       <p>
+        UGC-Entitled
+       </p>
+      </div>
+      <div class="rank-box">
+       <img src="images/ac3.webp"/>
+       <p>
+        WES Recognized
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="apply-premium">
+   <div class="apply-wrap">
+    <!-- LEFT -->
+    <div class="apply-content">
+     <h2>
+      Who Can Apply?
+     </h2>
+     <div class="apply-box">
+      <div class="icon">
+       🎓
+      </div>
+      <p>
+       <strong>
+        Graduates from Any Discipline:
+       </strong>
+       Applicants with a bachelor's degree (minimum 40% marks). Candidates below 40% can qualify through an entrance test.
+      </p>
+     </div>
+     <div class="apply-box">
+      <div class="icon">
+       💼
+      </div>
+      <p>
+       <strong>
+        Working Professionals:
+       </strong>
+       Individuals looking to upskill, accelerate career growth, or transition into managerial roles.
+      </p>
+     </div>
+     <div class="apply-box">
+      <div class="icon">
+       🚀
+      </div>
+      <p>
+       <strong>
+        Entrepreneurs &amp; Business Owners:
+       </strong>
+       Professionals aiming to strengthen business strategy, leadership, and project management skills.
+      </p>
+     </div>
+     <div class="apply-box">
+      <div class="icon">
+       📚
+      </div>
+      <p>
+       <strong>
+        Fresh Graduates:
+       </strong>
+       Recent graduates seeking a strong foundation in business programs to kickstart their careers.
+      </p>
+     </div>
+    </div>
+    <!-- RIGHT -->
+    <div class="apply-image">
+     <img src="images/whocan.webp"/>
+    </div>
+   </div>
+  </section>
+  <section class="fee-modern">
+   <div class="fee-wrapper">
+    <h2>
+     Amity Online MBA Fee Structure &amp; EMI Options
+    </h2>
+    <div class="fee-layout">
+     <!-- LEFT -->
+     <div class="fee-cards">
+      <div class="card one">
+       <span>
+        One-time payment
+       </span>
+       <h3>
+        ₹2,07,000
+       </h3>
+      </div>
+      <div class="card two">
+       <span>
+        Annual Fee
+       </span>
+       <h3>
+        ₹1,06,880
+       </h3>
+      </div>
+      <div class="card three">
+       <span>
+        Per Semester Fee
+       </span>
+       <h3>
+        ₹56,300
+       </h3>
+      </div>
+     </div>
+     <!-- RIGHT -->
+     <div class="emi-box">
+      <p>
+       <b>
+        24/ Month No-Cost EMI
+       </b>
+      </p>
+      <h3>
+       ₹8,906 / Month
+      </h3>
+      <button class="ws-open-btn">
+       Easy Payment Options
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="amity-process-premium">
+   <div class="amity-process-wrap">
+    <h2 class="amity-process-heading">
+     Admission Process
+    </h2>
+    <div class="amity-timeline">
+     <div class="amity-progress-line">
+     </div>
+     <div class="amity-step-item">
+      <div class="amity-circle">
+       1
+      </div>
+      <div class="amity-box">
+       <h3>
+        Application
+       </h3>
+       <p>
+        Fill in your basic, education &amp; work experience-related details and pay the application fee to register.
+       </p>
+      </div>
+     </div>
+     <div class="amity-step-item">
+      <div class="amity-circle">
+       2
+      </div>
+      <div class="amity-box">
+       <h3>
+        Fee payment
+       </h3>
+       <p>
+        Pay the admission fee for the first semester/year or full program.
+       </p>
+      </div>
+     </div>
+     <div class="amity-step-item">
+      <div class="amity-circle">
+       3
+      </div>
+      <div class="amity-box">
+       <h3>
+        Document upload
+       </h3>
+       <p>
+        Upload supporting documents &amp; submit your application.
+       </p>
+      </div>
+     </div>
+     <div class="amity-step-item">
+      <div class="amity-circle">
+       4
+      </div>
+      <div class="amity-box">
+       <h3>
+        University approval
+       </h3>
+       <p>
+        The university will evaluate your documents to confirm your admission.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="rec-sec">
+   <div class="rec-wrap">
+    <h2>
+     Professionals From Top Organizations Trust Amity for Continuous Learning
+     <span>
+      (Top Recruiters)
+     </span>
+    </h2>
+    <!-- ROW 1 -->
+    <div class="rec-slider">
+     <div class="rec-track rec-track-1">
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <!-- duplicate -->
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <!-- duplicate -->
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+     </div>
+    </div>
+    <!-- ROW 2 -->
+    <div class="rec-slider">
+     <div class="rec-track rec-track-2">
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <!-- duplicate -->
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+      <!-- duplicate -->
+      <img src="images/r4.webp"/>
+      <img src="images/r1.png"/>
+      <img src="images/r2.webp"/>
+      <img src="images/r3.png"/>
+      <img src="images/r5.png"/>
+      <img src="images/r6.png"/>
+      <img src="images/r7.png"/>
+      <img src="images/r8.png"/>
+     </div>
+    </div>
+   </div>
+  </section>
+  <section class="faq-sec">
+   <div class="faq-wrap">
+    <!-- LEFT SIDE -->
+    <div class="faq-left">
+     <h2>
+      Frequently Asked Questions
+     </h2>
+     <div class="faq-box">
+      <h3>
+       Have Questions or Doubts?
+      </h3>
+      <p>
+       Get the Answers to All Your Queries
+      </p>
+      <a class="faq-btn ws-open-btn" href="#">
+       📞 Contact Our Team
+      </a>
+     </div>
+    </div>
+    <!-- RIGHT SIDE -->
+    <div class="faq-right">
+     <div class="faq-item active">
+      <div class="faq-q">
+       What is the admission process for Amity Online?
+       <span>
+        -
+       </span>
+      </div>
+      <div class="faq-a">
+       The admission process is simple and fully online. Choose your preferred program, complete the application form, upload the required documents, and secure your admission by paying the applicable fees upon approval.
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-q">
+       Are the programs offered by Amity University Online accredited?
+       <span>
+        +
+       </span>
+      </div>
+      <div class="faq-a">
+       Yes, all programs are approved by relevant accreditation bodies. Amity's online degrees are widely recognized and valued by employers and academic institutions globally.
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-q">
+       How does online learning at Amity University Online work?
+       <span>
+        +
+       </span>
+      </div>
+      <div class="faq-a">
+       Amity's digital learning platform offers easy access to lectures, study materials, assignments, and interactive sessions. Students can learn anytime, anywhere, and progress at their own pace with full flexibility.
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-q">
+       Is an Online MBA from Amity worth it?
+       <span>
+        +
+       </span>
+      </div>
+      <div class="faq-a">
+       Yes, an Online MBA from Amity University Online is a strong choice. The university is NAAC A+ accredited, and the program is UGC-DEB approved, making the degree fully recognized and equivalent to a traditional on-campus MBA.
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-q">
+       What is the fee for the Amity Online MBA?
+       <span>
+        +
+       </span>
+      </div>
+      <div class="faq-a">
+       Amity Online MBA is designed to be affordable, with a total program fee of approximately ₹1,99,000. Flexible payment options, including zero-cost EMI, are available so you can pay in installments instead of a lump sum.
+      </div>
+     </div>
+     <div class="faq-item">
+      <div class="faq-q">
+       Is Amity Online a Tier 1 college?
+       <span>
+        +
+       </span>
+      </div>
+      <div class="faq-a">
+       Amity University is generally regarded as a Tier 2 institution, offering quality education, strong infrastructure, and good career opportunities for students.
+      </div>
+     </div>
+    </div>
+   </div>
+  </section>
+  <footer class="custom-footer">
+   <div class="footer-top">
+    <div class="footer-col">
+     <p>
+      <strong>
+       Disclaimer:
+      </strong>
+      Hike Education is a marketing service partner only. Amity University Online reserves full rights to request modification or removal of any content deemed inaccurate or non-compliant. All images used are for illustrative purposes and may not represent actual university property, faculty, or students.
+     </p>
+    </div>
+    <div class="footer-divider">
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <div class="footer-links">
+     <a href="html/termandcondition.html" target="_blank">
+      Terms &amp; Condition
+     </a>
+     <span>
+      |
+     </span>
+     <a href="html/privacypolicy.html" target="_blank">
+      Privacy Policy
+     </a>
+    </div>
+    <p class="footer-copy">
+     (Copyright © 2026, All Rights Reserved)
+    </p>
+   </div>
+  </footer>
+  <!-- ðŸ”˜ TRIGGER BUTTON -->
+  <!-- <button class="ws-open-btn">Apply Now</button> -->
+  <!-- ðŸ”¥ POPUP -->
+  <div class="ws-popup" id="wsPopup">
+   <div class="ws-overlay">
+   </div>
+   <div class="ws-box">
+    <span class="ws-close" id="wsClose">
+     ×
+    </span>
+    <!-- âœ… YOUR SAME FORM -->
+    <form action="submit.php" class="lead-form ws-form" method="POST">
+     <div class="form-card ws-card">
+      <div class="ws-header">
+       <h3>
+        APPLY FOR ONLINE MBA
+       </h3>
+       <p class="sub">
+        Get information about programs and admissions
+       </p>
+      </div>
+      <!-- NAME -->
+      <div class="fg">
+       <label>
+        Full Name
+       </label>
+       <input name="name" placeholder="Enter Your Full Name" required="" type="text"/>
+      </div>
+      <!-- EMAIL -->
+      <div class="fg">
+       <label>
+        Email ID
+       </label>
+       <input name="email" placeholder="Email ID" required="" type="email"/>
+      </div>
+      <!-- MOBILE -->
+      <div class="fg">
+       <label>
+        Mobile Number
+       </label>
+       <div class="phone-wrap">
+        <div class="phone-prefix">
+         <img src="images/in.png"/>
+         +91 -
+        </div>
+        <input inputmode="numeric" maxlength="10" name="mobile" placeholder="Mobile Number" required="" type="tel"/>
+       </div>
+      </div>
+      <!-- TWO COL -->
+      <div class="two-col">
+       <div class="fg">
+        <label>
+         Select Course
+        </label>
+        <div class="sel-wrap">
+         <select name="program" required="">
+          <option disabled="" selected="" value="">
+           Select Course
+          </option>
+          <option value="Online MBA">
+           Online MBA
+          </option>
+          <option value="Online MCA">
+           Online MCA
+          </option>
+          <option value="Online BBA">
+           Online BBA
+          </option>
+          <option value="Online BCA">
+           Online BCA
+          </option>
+          <option value="Other">
+           Other
+          </option>
+         </select>
+        </div>
+       </div>
+       <div class="fg">
+        <label>
+         State
+        </label>
+        <div class="sel-wrap">
+         <select name="state" required="">
+          <option disabled="" selected="" value="">
+           Select State
+          </option>
+          <!-- STATES -->
+          <option>
+           Andhra Pradesh
+          </option>
+          <option>
+           Arunachal Pradesh
+          </option>
+          <option>
+           Assam
+          </option>
+          <option>
+           Bihar
+          </option>
+          <option>
+           Chhattisgarh
+          </option>
+          <option>
+           Goa
+          </option>
+          <option>
+           Gujarat
+          </option>
+          <option>
+           Haryana
+          </option>
+          <option>
+           Himachal Pradesh
+          </option>
+          <option>
+           Jharkhand
+          </option>
+          <option>
+           Karnataka
+          </option>
+          <option>
+           Kerala
+          </option>
+          <option>
+           Madhya Pradesh
+          </option>
+          <option>
+           Maharashtra
+          </option>
+          <option>
+           Manipur
+          </option>
+          <option>
+           Meghalaya
+          </option>
+          <option>
+           Mizoram
+          </option>
+          <option>
+           Nagaland
+          </option>
+          <option>
+           Odisha
+          </option>
+          <option>
+           Punjab
+          </option>
+          <option>
+           Rajasthan
+          </option>
+          <option>
+           Sikkim
+          </option>
+          <option>
+           Tamil Nadu
+          </option>
+          <option>
+           Telangana
+          </option>
+          <option>
+           Tripura
+          </option>
+          <option>
+           Uttar Pradesh
+          </option>
+          <option>
+           Uttarakhand
+          </option>
+          <option>
+           West Bengal
+          </option>
+          <!-- UNION TERRITORIES -->
+          <option>
+           Andaman and Nicobar Islands
+          </option>
+          <option>
+           Chandigarh
+          </option>
+          <option>
+           Dadra and Nagar Haveli and Daman and Diu
+          </option>
+          <option>
+           Delhi
+          </option>
+          <option>
+           Jammu and Kashmir
+          </option>
+          <option>
+           Ladakh
+          </option>
+          <option>
+           Lakshadweep
+          </option>
+          <option>
+           Puducherry
+          </option>
+         </select>
+        </div>
+       </div>
+      </div>
+      <!-- CHECKBOX -->
+      <!--<div class="chk-row">-->
+      <!--  <input type="checkbox" name="graduate" required>-->
+      <!--  <label>I am a graduate with min. 40% marks*</label>-->
+      <!--</div>-->
+      <div class="chk-row">
+       <input checked="" name="terms" required="" type="checkbox"/>
+       <label>
+        I agree to get updates from counsellor
+       </label>
+      </div>
+      <!-- HIDDEN -->
+      <input class="utm_source" name="utm_source" type="hidden" value="google-ads"/>
+      <input class="utm_medium" name="utm_medium" type="hidden" value="CPC"/>
+      <input class="utm_campaign" name="utm_campaign" type="hidden" value=""/>
+      <input class="utm_adgroup" name="utm_adgroup" type="hidden" value=""/>
+      <input class="utm_term" name="utm_term" type="hidden" value="amity online"/>
+      <input class="utm_content" name="utm_content" type="hidden" value="Brand"/>
+      <input class="gclid" name="gclid" type="hidden" value="CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE"/>
+      <input class="utm_creative" name="utm_creative" type="hidden" value=""/>
+      <input class="page_url" name="page_url" type="hidden" value="https://amityonlinemba.hikeeducation.com/?utm_source=google-ads&amp;utm_medium=CPC&amp;utm_content=Brand&amp;utm_agid=198785733791&amp;utm_term=amity%20online&amp;gad_source=1&amp;gad_campaignid=23789810087&amp;gbraid=0AAAAAqZcYHtcnrnjyWxCEJJUjfhYvDHUo&amp;gclid=CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE&amp;fbclid=PAT01DUATBlX5leHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafs1PfqltyTYmhqVCq8ZMoSE4o4Z7-EP_PZpGaHqBs8-KgMh3-cXLBK86K28g_aem_vwaDKLbcpmrqnLOssqlC6Q"/>
+      <input class="ip_address" name="ip_address" type="hidden" value="13.221.80.184"/>
+      <!-- SUBMIT -->
+      <button class="submit-btn prevent-multiple" type="submit">
+       <svg fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z">
+        </path>
+       </svg>
+       Submit
+      </button>
+     </div>
+    </form>
+   </div>
+  </div>
+  <!--<a href="#" class="sticky-cta-pro ws-open-btn">-->
+  <!--  <span class="icon">ðŸ“ž</span>-->
+  <!--  Apply Now-->
+  <!--</a>-->
+  <!-- WhatsApp Widget -->
+  <div class="wa-widget" id="waWidget">
+   <!-- Popup Card -->
+   <div class="wa-bubble" id="waBubble">
+    <div class="wa-shimmer-bar">
+    </div>
+    <div class="wa-bubble-inner">
+     <button aria-label="Close" class="wa-close-btn" onclick="document.getElementById('waBubble').classList.remove('show')">
+      ×
+     </button>
+     <div class="wa-bubble-top">
+      <div class="wa-avatar">
+       <!--<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+       <!--  <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.71 6.32L3 29l6.84-1.69A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white"/>-->
+       <!--  <path d="M12 12c-.24.55-.48 1.21.12 1.94.6.72 1.69 2.2 1.69 2.2s.24.36-.12.84c-.36.48-1.33 1.45-1.45 1.69-.12.24 0 .48.12.6.6.72 1.45 1.57 2.42 2.17.84.48 1.81.84 2.66.84.48 0 .84-.24 1.09-.6l.6-1.09c.12-.24.36-.24.6-.12l1.93.96c.24.12.36.48.24.84-.36 1.09-1.45 1.69-2.42 1.57-1.81-.24-4.11-1.21-6.04-3.38-1.81-2.05-2.54-4.47-2.17-6.28.24-.84.84-1.45 1.57-1.57.36 0 .6.36.6.72 0 0-.12.12-.12.36z" fill="#25D366"/>-->
+       <!--</svg>-->
+       <img alt="NMIMS Logo" src="images/favicon.ico"/>
+      </div>
+      <div class="wa-info">
+       <strong>
+        Amity Online
+       </strong>
+       <span>
+        <span class="wa-online-dot">
+        </span>
+        Online Now
+       </span>
+      </div>
+     </div>
+     <p>
+      👋 Interested in
+      <span>
+       Amity Online?
+      </span>
+      <br/>
+      Get free counselling from our expert instantly!
+     </p>
+     <a class="wa-chat-btn" href="https://wa.me/919311945744?text=Hi%2C%20I%E2%80%99m%20interested.%20Please%20share%20more%20details." rel="noopener" target="_blank">
+      <svg fill="white" viewbox="0 0 24 24">
+       <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52z">
+       </path>
+      </svg>
+      Chat on WhatsApp
+     </a>
+    </div>
+   </div>
+   <!-- Circle Button -->
+   <div style="position:relative; display:inline-flex; align-items:center; justify-content:center;">
+    <span class="wa-ring">
+    </span>
+    <span class="wa-ring" style="animation-delay:.8s">
+    </span>
+    <span class="wa-ring" style="animation-delay:1.6s">
+    </span>
+    <a aria-label="Chat on WhatsApp" class="wa-circle" href="https://wa.me/919311945744?text=Hi%2C%20I%E2%80%99m%20interested.%20Please%20share%20more%20details." id="waCircle" onclick="toggleBubble(event)" rel="noopener" target="_blank">
+     <svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.71 6.32L3 29l6.84-1.69A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white">
+      </path>
+      <path d="M12 12c-.24.55-.48 1.21.12 1.94.6.72 1.69 2.2 1.69 2.2s.24.36-.12.84c-.36.48-1.33 1.45-1.45 1.69-.12.24 0 .48.12.6.6.72 1.45 1.57 2.42 2.17.84.48 1.81.84 2.66.84.48 0 .84-.24 1.09-.6l.6-1.09c.12-.24.36-.24.6-.12l1.93.96c.24.12.36.48.24.84-.36 1.09-1.45 1.69-2.42 1.57-1.81-.24-4.11-1.21-6.04-3.38-1.81-2.05-2.54-4.47-2.17-6.28.24-.84.84-1.45 1.57-1.57.36 0 .6.36.6.72 0 0-.12.12-.12.36z" fill="#25D366">
+      </path>
+     </svg>
+     <span class="wa-notif-dot">
+     </span>
+    </a>
+   </div>
+   <!-- Label (desktop only) -->
+   <div class="wa-circle-label">
+    WhatsApp Us
+   </div>
+  </div>
+  <script>
+   var bubbleOpen = false;
+  var isMobile = window.innerWidth <= 768;
+
+function toggleBubble(e) {
+    if (!isMobile) {
+      var b = document.getElementById('waBubble');
+      bubbleOpen = !bubbleOpen;
+      if (bubbleOpen) b.classList.add('show');
+      else b.classList.remove('show');
+      // WhatsApp bhi khulega same time pe
+    }
+  }
+
+  // Auto show popup after 3s on DESKTOP only
+  if (!isMobile) {
+    setTimeout(function(){
+      var b = document.getElementById('waBubble');
+      if(b && !bubbleOpen){ b.classList.add('show'); bubbleOpen=true; }
+    }, 3000);
+    setTimeout(function(){
+      var b = document.getElementById('waBubble');
+      if(b){ b.classList.remove('show'); bubbleOpen=false; }
+    }, 12000);
+  }
+
+  window.addEventListener('resize', function(){
+    isMobile = window.innerWidth <= 768;
+  });
+  </script>
+  <!-- End WhatsApp Widget -->
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+
+  const popup = document.getElementById("wsPopup");
+  const openBtns = document.querySelectorAll(".ws-open-btn"); // FIX
+  const closeBtn = document.getElementById("wsClose");
+
+  // ðŸ‘‰ MULTIPLE BUTTON CLICK SUPPORT
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      popup.classList.add("active");
+    });
+  });
+
+  // CLOSE
+  if (closeBtn) {
+    closeBtn.addEventListener("click", () => {
+      popup.classList.remove("active");
+    });
+  }
+
+  // AUTO OPEN (10 sec)
+  setTimeout(() => {
+    popup.classList.add("active");
+  }, 3000000);
+
+});
+  </script>
+  <script>
+   document.querySelectorAll(".rec-track").forEach(track => {
+  track.innerHTML += track.innerHTML;
+});
+  </script>
+  <script>
+   function openTab(tabId) {
+  document.querySelectorAll(".tab-content").forEach(tab => {
+    tab.classList.remove("active");
+  });
+
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  document.getElementById(tabId).classList.add("active");
+  event.target.classList.add("active");
+}
+  </script>
+  <script>
+   const track = document.querySelector(".rank-scroll-track");
+let scrollAmount = 0;
+let isPaused = false;
+
+// duplicate for loop
+track.innerHTML += track.innerHTML;
+
+function autoScroll() {
+  if (!isPaused) {
+    scrollAmount += 0.5; // smooth speed
+    track.style.transform = `translateX(-${scrollAmount}px)`;
+
+    if (scrollAmount >= track.scrollWidth / 2) {
+      scrollAmount = 0;
+    }
+  }
+  requestAnimationFrame(autoScroll);
+}
+
+autoScroll();
+
+// HOVER STOP
+const slider = document.querySelector(".rank-scroll-slider");
+
+slider.addEventListener("mouseenter", () => {
+  isPaused = true;
+});
+
+slider.addEventListener("mouseleave", () => {
+  isPaused = false;
+});
+  </script>
+  <script>
+   document.querySelectorAll(".faq-q").forEach(q => {
+  q.addEventListener("click", () => {
+
+    const item = q.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(i => {
+      if (i !== item) i.classList.remove("active");
+    });
+
+    item.classList.toggle("active");
+  });
+});
+  </script>
+  <script>
+   (function () {
+
+  function getParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param) || "";
+  }
+
+  const params = ["utm_source","utm_medium","utm_campaign","utm_adgroup","utm_term","utm_content","utm_creative","gclid"];
+
+  params.forEach(param => {
+    let value = getParam(param);
+
+// handle case mismatch for utm_creative
+if (!value && param === "utm_creative") {
+  value = getParam("utm_Creative");
+}
+    if (value) localStorage.setItem(param, value);
+  });
+
+  document.querySelectorAll(".lead-form").forEach(form => {
+
+    params.forEach(param => {
+      const field = form.querySelector("." + param);
+      if (field) field.value = localStorage.getItem(param) || "";
+    });
+
+    const urlField = form.querySelector(".page_url");
+    if (urlField) urlField.value = window.location.href;
+
+    // MOBILE VALIDATION
+    
+    
+    // NAME VALIDATION
+const name = form.querySelector("input[name='name']");
+
+if (name) {
+  name.addEventListener("input", () => {
+    // Sirf letters aur space allow
+    name.value = name.value.replace(/[^a-zA-Z ]/g, "");
+
+    // Multiple spaces ko ek space banao
+    name.value = name.value.replace(/\s{2,}/g, " ");
+
+    // Max 50 characters
+    name.value = name.value.slice(0, 50);
+  });
+}
+    const mobile = form.querySelector("input[name='mobile']");
+    mobile.addEventListener("input", () => {
+      mobile.value = mobile.value.replace(/\D/g, "").slice(0,10);
+    });
+
+    form.addEventListener("submit", function(e){
+
+      if(!/^[6-9]\d{9}$/.test(mobile.value)){
+        alert("Enter valid 10 digit mobile number starting with 6-9");
+        e.preventDefault();
+        return;
+      }
+
+      const email = form.querySelector("input[name='email']").value;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if(!emailRegex.test(email)){
+        alert("Enter valid email address");
+        e.preventDefault();
+      }
+
+    });
+
+  });
+
+  fetch("https://api.ipify.org?format=json")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll(".ip_address").forEach(el => {
+        el.value = data.ip;
+      });
+    });
+
+})();
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function () {
+
+  const forms = document.querySelectorAll(".lead-form");
+
+  forms.forEach(function(form) {
+
+    form.addEventListener("submit", function () {
+
+      const submitBtn = form.querySelector(".prevent-multiple");
+
+      submitBtn.disabled = true;
+
+      submitBtn.innerHTML = "Submitting...";
+
+      submitBtn.style.opacity = "0.7";
+      submitBtn.style.cursor = "not-allowed";
+
+    });
+
+  });
+
+});
+  </script>
+  <script>
+   'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl508715'},{'dcenter':'p3'},{'cp_id':'10967067'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+  </script>
+  <script src="js/tccl.min.js">
+  </script>
+  <script charset="" id="" type="text/javascript">
+   !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1893666021343054");fbq("set","agent","tmgoogletagmanager","1893666021343054");fbq("track","PageView");
+  </script>
+  <noscript>
+   <img height="1" src="images/tr" style="display:none" width="1"/>
+  </noscript>
+ </body>
+</html>
