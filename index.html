@@ -1,36 +1,28 @@
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Amity Online MBA
-  </title>
-  <link href="images/favicon.png" rel="icon" type="image/x-icon"/>
-  <link href="css/style.css" rel="stylesheet"/>
-  <!-- Google Tag Manager -->
-  <script async="" src="js/clarity.js">
-  </script>
-  <script async="" src="js/1893666021343054">
-  </script>
-  <script async="" src="js/fbevents.js">
-  </script>
-  <script async="" src="js/wfmoqr582c" type="text/javascript">
-  </script>
-  <script async="" src="js/js" type="text/javascript">
-  </script>
-  <script async="" src="js/gtm.js">
-  </script>
-  <script>
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Amity Online MBA</title>
+<link href="images/favicon.png" rel="icon" type="image/x-icon"/>
+<link href="css/style.css" rel="stylesheet"/>
+<!-- Google Tag Manager -->
+<script async="" src="js/clarity.js"></script>
+<script async="" src="js/1893666021343054"></script>
+<script async="" src="js/fbevents.js"></script>
+<script async="" src="js/wfmoqr582c" type="text/javascript"></script>
+<script async="" src="js/js" type="text/javascript"></script>
+<script async="" src="js/gtm.js"></script>
+<script>
    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-WV8M7MZ2');
-  </script>
-  <!-- End Google Tag Manager -->
-  <!--whatsapp chatbot-->
-  <style>
-   /* ===== WHATSAPP WIDGET ===== */
+</script>
+<!-- End Google Tag Manager -->
+<!--whatsapp chatbot-->
+<style>
+/* ===== WHATSAPP WIDGET ===== */
 
 /* DESKTOP: Fixed left-center circle */
 .wa-widget {
@@ -245,9 +237,76 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   from { opacity:0; transform:scale(.5) rotate(-20deg); }
   to   { opacity:1; transform:scale(1) rotate(0deg); }
 }
-  </style>
-  <!--chatbot-->
-  <style>
+</style>
+<!-- Floating Call Widget (matches WhatsApp widget style) -->
+<style>
+.call-widget {
+  position: fixed;
+  left: 20px;
+  right: auto;
+  bottom: 90px;
+  z-index: 999999;
+}
+.call-circle {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #0d47a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  box-shadow: 0 6px 24px rgba(13,71,161,0.5);
+  transition: transform .2s, box-shadow .2s;
+}
+.call-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 36px rgba(13,71,161,0.7);
+}
+.call-circle span {
+  font-size: 28px;
+  line-height: 1;
+  color: #fff;
+}
+.call-ring {
+  position: absolute;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid #0d47a1;
+  animation: callRipple 2.4s ease-out infinite;
+  pointer-events: none;
+}
+.call-ring:nth-child(2) { animation-delay: .8s; }
+.call-ring:nth-child(3) { animation-delay: 1.6s; }
+
+@keyframes callRipple {
+  0%   { transform:scale(1); opacity:.7; }
+  100% { transform:scale(2.2); opacity:0; }
+}
+
+@media (max-width: 768px) {
+  .call-widget {
+    left: 11px;
+    right: auto;
+    bottom: 120px;
+  }
+  .call-circle {
+    width: 56px;
+    height: 56px;
+  }
+  .call-ring {
+    width: 56px;
+    height: 56px;
+  }
+  .call-circle span {
+    font-size: 24px;
+  }
+}
+</style>
+<!--chatbot-->
+<style>
    @media (max-width: 768px) {
 	
 
@@ -665,21 +724,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
  
   overflow-y: auto;
 }
-  </style>
-  <script async="" src="js/js_7.js" type="text/javascript">
-  </script>
-  <script async="" src="js/js_8.js" type="text/javascript">
-  </script>
- </head>
- <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript>
+</style>
+<script async="" src="js/js_7.js" type="text/javascript"></script>
+<script async="" src="js/js_8.js" type="text/javascript"></script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript>
    <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-WV8M7MZ2" style="display:none;visibility:hidden" width="0">
    </iframe>
   </noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <!-- Chat icon -->
-  <div class="chat-icon" onclick="toggleChatPopup()">
+<!-- End Google Tag Manager (noscript) -->
+<!-- Chat icon -->
+<div class="chat-icon" onclick="toggleChatPopup()">
    <a href="javascript:void(0)">
     <img alt="Chat" src="images/Mask-group-14.png"/>
     <span class="chat-notification" id="chatNotification">
@@ -687,8 +744,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </span>
    </a>
   </div>
-  <!-- Chat popup -->
-  <div class="chat-popup" id="chatPopup">
+<!-- Chat popup -->
+<div class="chat-popup" id="chatPopup">
    <div class="chat-header">
     <img alt="Chat Icon" class="chat-icon-top" src="images/wqlknf.png"/>
     Amity Online
@@ -708,22 +765,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </button>
    </div>
   </div>
-  <!-- Hidden lead form -->
-  <form action="chatbot-verify.php" id="leadForm" method="POST" style="display: none;">
-   <input id="fname" name="name" type="hidden"/>
-   <input id="email" name="email" type="hidden"/>
-   <input id="phoneno" name="mobile" type="hidden"/>
-   <input id="city" name="city" type="hidden"/>
-   <input id="program" name="program" type="hidden"/>
-   <input id="utm_source" name="utm_source" type="hidden" value="google-ads"/>
-   <input id="utm_campaign" name="utm_campaign" type="hidden" value=""/>
-   <input id="utm_content" name="utm_content" type="hidden" value="Brand"/>
-   <input id="utm_medium" name="utm_medium" type="hidden" value="CPC"/>
-   <input id="utm_keyword" name="utm_keyword" type="hidden" value=""/>
-   <input id="gclid" name="gclid" type="hidden" value="CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE"/>
-   <input id="current_url" name="current_url" type="hidden" value="https://amityonlinemba.hikeeducation.com/?utm_source=google-ads&amp;utm_medium=CPC&amp;utm_content=Brand&amp;utm_agid=198785733791&amp;utm_term=amity%20online&amp;gad_source=1&amp;gad_campaignid=23789810087&amp;gbraid=0AAAAAqZcYHtcnrnjyWxCEJJUjfhYvDHUo&amp;gclid=CjwKCAjwmdLSBhANEiwAkREMN9VCziprrbfmbGhhn9z4gF2hiTOC0AhEDB-kwoR-Hymw-hkRlkmABxoC9nUQAvD_BwE&amp;fbclid=PAT01DUATBlX5leHRuA2FlbQIxMABzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAafs1PfqltyTYmhqVCq8ZMoSE4o4Z7-EP_PZpGaHqBs8-KgMh3-cXLBK86K28g_aem_vwaDKLbcpmrqnLOssqlC6Q"/>
-  </form>
-  <script>
+
+<script>
    // ── UTM + URL capture (runs immediately on page load) ────────────────────
   function getParam(param) {
     return new URLSearchParams(window.location.search).get(param) || "";
@@ -737,7 +780,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   document.getElementById("gclid").value        = getParam("gclid");
   document.getElementById("current_url").value  = window.location.href;
   </script>
-  <script>
+<script>
    // ── Chat popup toggle ────────────────────────────────────────────────────
   const popupSound = new Audio('https://audio-previews.elements.envatousercontent.com/files/357949926/preview.mp3');
 
@@ -778,21 +821,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     setTimeout(openFormPopup, 20000000);  // 20s me form open
   });
   </script>
-  <script>
+<script>
    const chatBody  = document.getElementById("chatBody");
 const userInput = document.getElementById("userInput");
 
 // ✅ QUESTIONS
 const questions = [
-  "Hi, Welcome to Amity Online! What's your name?",
-  "Nice to meet you! What's your email?",
-  "Got it. What's your mobile number?",
-  "Great! Which city are you from?",
+  "Hi! Welcome to Amity Online. What's your name?",
+  "Great! What's your Email ID?",
+  "What's your mobile number?",
+  "Which city are you from?",
   "Which course are you interested in?"
 ];
 
 // ✅ OPTIONS (alag define hoga)
-const courseOptions = ["Online MBA", "Online MCA", "Online BBA", "Online BCA", "Other"];
+const courseOptions = ["Online MBA"];
 
 // ✅ VALIDATIONS
 const validations = [
@@ -894,13 +937,23 @@ function showCourseOptions() {
 
 // ✅ SUBMIT
 function submitLead() {
-  document.getElementById("fname").value   = userResponses[0];
-  document.getElementById("email").value   = userResponses[1];
-  document.getElementById("phoneno").value = userResponses[2];
-  document.getElementById("city").value    = userResponses[3];
-  document.getElementById("program").value = userResponses[4];
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwlFYv1It7fW-FNiPCW6BDtxmcUyszFnZi_POffU32UVwLcBzGQJmQnOp3-bptRFaL6Fg/exec";
 
-  document.getElementById("leadForm").submit();
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      "Full Name": userResponses[0],
+      "Email id": userResponses[1],
+      "Mobile Number": userResponses[2],
+      "select course": userResponses[4],
+      "state": userResponses[3],
+      "Message": "Lead from Chatbot"
+    })
+  });
+
+  displayMessage("Thank you! Our team will contact you within 24 hours 🙏", "bot");
 }
 
 // ✅ ENTER KEY
@@ -911,19 +964,19 @@ userInput.addEventListener("keypress", function (e) {
   }
 });
   </script>
-  <!-- STICKY HEADER -->
-  <header>
-   <img alt="Amity University Online" class="logo" src="images/amitylogo.png"/>
+<!-- STICKY HEADER -->
+<header>
+   <img alt="Amity Online" class="logo" src="images/amitylogo.png"/>
    <a class="enquire-btn ws-open-btn" href="#">
-    ENQUIRE NOW  →
+    ENQUIRE NOW  →
    </a>
   </header>
-  <!-- ADMISSION BANNER -->
-  <div class="admission-banner">
+<!-- ADMISSION BANNER -->
+<div class="admission-banner">
    Admission Open - Limited Seats
   </div>
-  <!-- PAGE SECTION: white/gray space on L & R -->
-  <div class="page-section">
+<!-- PAGE SECTION: white/gray space on L & R -->
+<div class="page-section">
    <section class="hero">
     <!-- COL 1: Girl Image -->
     <div class="hero-girl">
@@ -984,7 +1037,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
     <!-- COL 3: Application Form -->
     <div class="hero-form">
-     <form action="submit.php" class="lead-form" method="POST">
+     <form id="contactForm" class="lead-form" method="POST">
       <div class="form-card">
        <h3 style="color: #1f3b6d;">
         APPLY FOR ONLINE MBA
@@ -997,14 +1050,14 @@ userInput.addEventListener("keypress", function (e) {
         <label>
          Full Name
         </label>
-        <input name="name" placeholder="Enter Your Full Name" required="" type="text"/>
+        <input name="Full Name" placeholder="Enter Your Full Name" required="" type="text"/>
        </div>
        <!-- EMAIL -->
        <div class="fg">
         <label>
          Email ID
         </label>
-        <input name="email" placeholder="Email ID" required="" type="email"/>
+        <input name="Email id" placeholder="Email ID" required="" type="email"/>
        </div>
        <!-- MOBILE -->
        <div class="fg">
@@ -1016,7 +1069,7 @@ userInput.addEventListener("keypress", function (e) {
           <img alt="IN" src="images/in.png"/>
           +91 -
          </div>
-         <input inputmode="numeric" maxlength="10" name="mobile" placeholder="Mobile Number" required="" type="tel"/>
+         <input inputmode="numeric" maxlength="10" name="Mobile Number" placeholder="Mobile Number" required="" type="tel"/>
         </div>
        </div>
        <!-- TWO COL -->
@@ -1026,24 +1079,9 @@ userInput.addEventListener("keypress", function (e) {
           Select Course
          </label>
          <div class="sel-wrap">
-          <select name="program" required="">
-           <option disabled="" selected="" value="">
-            Select Course
-           </option>
+          <select name="select course" required="">
            <option value="Online MBA">
             Online MBA
-           </option>
-           <option value="Online MCA">
-            Online MCA
-           </option>
-           <option value="Online BBA">
-            Online BBA
-           </option>
-           <option value="Online BCA">
-            Online BCA
-           </option>
-           <option value="Other">
-            Other
            </option>
           </select>
          </div>
@@ -1171,18 +1209,20 @@ userInput.addEventListener("keypress", function (e) {
          </div>
         </div>
        </div>
-       <!-- CHECKBOX -->
-       <!--<div class="chk-row">-->
-       <!--  <input type="checkbox" name="graduate" required>-->
-       <!--  <label>I am a graduate with min. 40% marks*</label>-->
-       <!--</div>-->
+       <!-- MESSAGE -->
+       <div class="fg">
+        <label>
+         Message
+        </label>
+        <textarea name="Message" placeholder="Enter your message" rows="3" style="width: 100%; border: 1px solid #ccc; border-radius: 6px; padding: 10px; font-family: inherit; font-size: 14px; outline: none;"></textarea>
+       </div>
        <div class="chk-row">
         <input checked="" name="terms" required="" type="checkbox"/>
         <label>
          I agree to get updates from counsellor
         </label>
        </div>
-       <!-- ðŸ”¥ HIDDEN TRACKING -->
+       <!-- 🔥 HIDDEN TRACKING -->
        <input class="utm_source" name="utm_source" type="hidden" value="google-ads"/>
        <input class="utm_medium" name="utm_medium" type="hidden" value="CPC"/>
        <input class="utm_campaign" name="utm_campaign" type="hidden" value=""/>
@@ -1206,8 +1246,8 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </section>
   </div>
-  <!-- /page-section -->
-  <section class="stats-section">
+<!-- /page-section -->
+<section class="stats-section">
    <div class="stats-container">
     <div class="stat-box">
      <h2>
@@ -1243,7 +1283,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="why-amity">
+<section class="why-amity">
    <div class="why-top">
     <h2>
      Why Choose Amity Online?
@@ -1303,7 +1343,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="mba-section">
+<section class="mba-section">
    <div class="mba-container">
     <!-- LEFT -->
     <div class="mba-left">
@@ -1431,7 +1471,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="spec-premium-sec">
+<section class="spec-premium-sec">
    <div class="spec-premium-wrap">
     <h2>
      Upskill With Industry-Aligned Specializations
@@ -1480,7 +1520,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="rank-scroll-sec">
+<section class="rank-scroll-sec">
    <div class="rank-scroll-wrap">
     <h2>
      Accreditations &amp; Rankings
@@ -1551,7 +1591,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="apply-premium">
+<section class="apply-premium">
    <div class="apply-wrap">
     <!-- LEFT -->
     <div class="apply-content">
@@ -1609,7 +1649,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="fee-modern">
+<section class="fee-modern">
    <div class="fee-wrapper">
     <h2>
      Amity Online MBA Fee Structure &amp; EMI Options
@@ -1659,7 +1699,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="amity-process-premium">
+<section class="amity-process-premium">
    <div class="amity-process-wrap">
     <h2 class="amity-process-heading">
      Admission Process
@@ -1722,10 +1762,10 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="rec-sec">
+<section class="rec-sec">
    <div class="rec-wrap">
     <h2>
-     Professionals From Top Organizations Trust Amity for Continuous Learning
+     Professionals From Top Organizations Trust Amity Online for Continuous Learning
      <span>
       (Top Recruiters)
      </span>
@@ -1810,7 +1850,7 @@ userInput.addEventListener("keypress", function (e) {
     </div>
    </div>
   </section>
-  <section class="faq-sec">
+<section class="faq-sec">
    <div class="faq-wrap">
     <!-- LEFT SIDE -->
     <div class="faq-left">
@@ -1844,35 +1884,35 @@ userInput.addEventListener("keypress", function (e) {
      </div>
      <div class="faq-item">
       <div class="faq-q">
-       Are the programs offered by Amity University Online accredited?
+       Are the programs offered by Amity Online accredited?
        <span>
         +
        </span>
       </div>
       <div class="faq-a">
-       Yes, all programs are approved by relevant accreditation bodies. Amity's online degrees are widely recognized and valued by employers and academic institutions globally.
+       Yes, all programs are approved by relevant accreditation bodies. Amity Online's online degrees are widely recognized and valued by employers and academic institutions globally.
       </div>
      </div>
      <div class="faq-item">
       <div class="faq-q">
-       How does online learning at Amity University Online work?
+       How does online learning at Amity Online work?
        <span>
         +
        </span>
       </div>
       <div class="faq-a">
-       Amity's digital learning platform offers easy access to lectures, study materials, assignments, and interactive sessions. Students can learn anytime, anywhere, and progress at their own pace with full flexibility.
+       Amity Online's digital learning platform offers easy access to lectures, study materials, assignments, and interactive sessions. Students can learn anytime, anywhere, and progress at their own pace with full flexibility.
       </div>
      </div>
      <div class="faq-item">
       <div class="faq-q">
-       Is an Online MBA from Amity worth it?
+       Is an Online MBA from Amity Online worth it?
        <span>
         +
        </span>
       </div>
       <div class="faq-a">
-       Yes, an Online MBA from Amity University Online is a strong choice. The university is NAAC A+ accredited, and the program is UGC-DEB approved, making the degree fully recognized and equivalent to a traditional on-campus MBA.
+       Yes, an Online MBA from Amity Online is a strong choice. The institution is NAAC A+ accredited, and the program is UGC-DEB approved, making the degree fully recognized and equivalent to a traditional on-campus MBA.
       </div>
      </div>
      <div class="faq-item">
@@ -1894,20 +1934,20 @@ userInput.addEventListener("keypress", function (e) {
        </span>
       </div>
       <div class="faq-a">
-       Amity University is generally regarded as a Tier 2 institution, offering quality education, strong infrastructure, and good career opportunities for students.
+       Amity Online is generally regarded as a Tier 2 institution, offering quality education, strong infrastructure, and good career opportunities for students.
       </div>
      </div>
     </div>
    </div>
   </section>
-  <footer class="custom-footer">
+<footer class="custom-footer">
    <div class="footer-top">
     <div class="footer-col">
      <p>
       <strong>
        Disclaimer:
       </strong>
-      Hike Education is a marketing service partner only. Amity University Online reserves full rights to request modification or removal of any content deemed inaccurate or non-compliant. All images used are for illustrative purposes and may not represent actual university property, faculty, or students.
+      Degree to Career is a marketing service partner only. Amity Online reserves full rights to request modification or removal of any content deemed inaccurate or non-compliant. All images used are for illustrative purposes and may not represent actual university property, faculty, or students.
      </p>
     </div>
     <div class="footer-divider">
@@ -1930,18 +1970,16 @@ userInput.addEventListener("keypress", function (e) {
     </p>
    </div>
   </footer>
-  <!-- ðŸ”˜ TRIGGER BUTTON -->
-  <!-- <button class="ws-open-btn">Apply Now</button> -->
-  <!-- ðŸ”¥ POPUP -->
-  <div class="ws-popup" id="wsPopup">
+<!-- 🔥 POPUP -->
+<div class="ws-popup" id="wsPopup">
    <div class="ws-overlay">
    </div>
    <div class="ws-box">
     <span class="ws-close" id="wsClose">
      ×
     </span>
-    <!-- âœ… YOUR SAME FORM -->
-    <form action="submit.php" class="lead-form ws-form" method="POST">
+    <!-- ✅ YOUR SAME FORM -->
+    <form id="popupContactForm" class="lead-form ws-form" method="POST">
      <div class="form-card ws-card">
       <div class="ws-header">
        <h3>
@@ -1956,14 +1994,14 @@ userInput.addEventListener("keypress", function (e) {
        <label>
         Full Name
        </label>
-       <input name="name" placeholder="Enter Your Full Name" required="" type="text"/>
+       <input name="Full Name" placeholder="Enter Your Full Name" required="" type="text"/>
       </div>
       <!-- EMAIL -->
       <div class="fg">
        <label>
         Email ID
        </label>
-       <input name="email" placeholder="Email ID" required="" type="email"/>
+       <input name="Email id" placeholder="Email ID" required="" type="email"/>
       </div>
       <!-- MOBILE -->
       <div class="fg">
@@ -1975,7 +2013,7 @@ userInput.addEventListener("keypress", function (e) {
          <img src="images/in.png"/>
          +91 -
         </div>
-        <input inputmode="numeric" maxlength="10" name="mobile" placeholder="Mobile Number" required="" type="tel"/>
+        <input inputmode="numeric" maxlength="10" name="Mobile Number" placeholder="Mobile Number" required="" type="tel"/>
        </div>
       </div>
       <!-- TWO COL -->
@@ -1985,24 +2023,9 @@ userInput.addEventListener("keypress", function (e) {
          Select Course
         </label>
         <div class="sel-wrap">
-         <select name="program" required="">
-          <option disabled="" selected="" value="">
-           Select Course
-          </option>
+         <select name="select course" required="">
           <option value="Online MBA">
            Online MBA
-          </option>
-          <option value="Online MCA">
-           Online MCA
-          </option>
-          <option value="Online BBA">
-           Online BBA
-          </option>
-          <option value="Online BCA">
-           Online BCA
-          </option>
-          <option value="Other">
-           Other
           </option>
          </select>
         </div>
@@ -2024,7 +2047,7 @@ userInput.addEventListener("keypress", function (e) {
            Arunachal Pradesh
           </option>
           <option>
-           Assam
+          Assam
           </option>
           <option>
            Bihar
@@ -2130,11 +2153,6 @@ userInput.addEventListener("keypress", function (e) {
         </div>
        </div>
       </div>
-      <!-- CHECKBOX -->
-      <!--<div class="chk-row">-->
-      <!--  <input type="checkbox" name="graduate" required>-->
-      <!--  <label>I am a graduate with min. 40% marks*</label>-->
-      <!--</div>-->
       <div class="chk-row">
        <input checked="" name="terms" required="" type="checkbox"/>
        <label>
@@ -2164,12 +2182,8 @@ userInput.addEventListener("keypress", function (e) {
     </form>
    </div>
   </div>
-  <!--<a href="#" class="sticky-cta-pro ws-open-btn">-->
-  <!--  <span class="icon">ðŸ“ž</span>-->
-  <!--  Apply Now-->
-  <!--</a>-->
-  <!-- WhatsApp Widget -->
-  <div class="wa-widget" id="waWidget">
+<!-- WhatsApp Widget -->
+<div class="wa-widget" id="waWidget">
    <!-- Popup Card -->
    <div class="wa-bubble" id="waBubble">
     <div class="wa-shimmer-bar">
@@ -2180,10 +2194,6 @@ userInput.addEventListener("keypress", function (e) {
      </button>
      <div class="wa-bubble-top">
       <div class="wa-avatar">
-       <!--<svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-       <!--  <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.71 6.32L3 29l6.84-1.69A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white"/>-->
-       <!--  <path d="M12 12c-.24.55-.48 1.21.12 1.94.6.72 1.69 2.2 1.69 2.2s.24.36-.12.84c-.36.48-1.33 1.45-1.45 1.69-.12.24 0 .48.12.6.6.72 1.45 1.57 2.42 2.17.84.48 1.81.84 2.66.84.48 0 .84-.24 1.09-.6l.6-1.09c.12-.24.36-.24.6-.12l1.93.96c.24.12.36.48.24.84-.36 1.09-1.45 1.69-2.42 1.57-1.81-.24-4.11-1.21-6.04-3.38-1.81-2.05-2.54-4.47-2.17-6.28.24-.84.84-1.45 1.57-1.57.36 0 .6.36.6.72 0 0-.12.12-.12.36z" fill="#25D366"/>-->
-       <!--</svg>-->
        <img alt="NMIMS Logo" src="images/favicon.ico"/>
       </div>
       <div class="wa-info">
@@ -2205,7 +2215,7 @@ userInput.addEventListener("keypress", function (e) {
       <br/>
       Get free counselling from our expert instantly!
      </p>
-     <a class="wa-chat-btn" href="https://wa.me/919311945744?text=Hi%2C%20I%E2%80%99m%20interested.%20Please%20share%20more%20details." rel="noopener" target="_blank">
+     <a class="wa-chat-btn" href="https://wa.me/919034382653" rel="noopener" target="_blank">
       <svg fill="white" viewbox="0 0 24 24">
        <path d="M20.52 3.48A11.93 11.93 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.63A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.21-3.48-8.52z">
        </path>
@@ -2222,7 +2232,7 @@ userInput.addEventListener("keypress", function (e) {
     </span>
     <span class="wa-ring" style="animation-delay:1.6s">
     </span>
-    <a aria-label="Chat on WhatsApp" class="wa-circle" href="https://wa.me/919311945744?text=Hi%2C%20I%E2%80%99m%20interested.%20Please%20share%20more%20details." id="waCircle" onclick="toggleBubble(event)" rel="noopener" target="_blank">
+    <a aria-label="Chat on WhatsApp" class="wa-circle" href="https://wa.me/919034382653" id="waCircle" onclick="toggleBubble(event)" rel="noopener" target="_blank">
      <svg fill="none" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
       <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.62 4.46 1.71 6.32L3 29l6.84-1.69A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3z" fill="white">
       </path>
@@ -2238,7 +2248,21 @@ userInput.addEventListener("keypress", function (e) {
     WhatsApp Us
    </div>
   </div>
-  <script>
+
+<!-- Floating Call Widget (matches WhatsApp widget) -->
+<div class="call-widget" id="callWidget">
+  <div style="position:relative; display:inline-flex; align-items:center; justify-content:center;">
+    <span class="call-ring"></span>
+    <span class="call-ring" style="animation-delay:.8s"></span>
+    <span class="call-ring" style="animation-delay:1.6s"></span>
+    <a aria-label="Call Now" class="call-circle" href="tel:9034382653">
+      <span>📞</span>
+    </a>
+  </div>
+</div>
+<!-- End Call Widget -->
+
+<script>
    var bubbleOpen = false;
   var isMobile = window.innerWidth <= 768;
 
@@ -2268,15 +2292,15 @@ function toggleBubble(e) {
     isMobile = window.innerWidth <= 768;
   });
   </script>
-  <!-- End WhatsApp Widget -->
-  <script>
+<!-- End WhatsApp Widget -->
+<script>
    document.addEventListener("DOMContentLoaded", function () {
 
   const popup = document.getElementById("wsPopup");
   const openBtns = document.querySelectorAll(".ws-open-btn"); // FIX
   const closeBtn = document.getElementById("wsClose");
 
-  // ðŸ‘‰ MULTIPLE BUTTON CLICK SUPPORT
+  // 👉 MULTIPLE BUTTON CLICK SUPPORT
   openBtns.forEach(btn => {
     btn.addEventListener("click", () => {
       popup.classList.add("active");
@@ -2297,12 +2321,12 @@ function toggleBubble(e) {
 
 });
   </script>
-  <script>
+<script>
    document.querySelectorAll(".rec-track").forEach(track => {
   track.innerHTML += track.innerHTML;
 });
   </script>
-  <script>
+<script>
    function openTab(tabId) {
   document.querySelectorAll(".tab-content").forEach(tab => {
     tab.classList.remove("active");
@@ -2316,7 +2340,7 @@ function toggleBubble(e) {
   event.target.classList.add("active");
 }
   </script>
-  <script>
+<script>
    const track = document.querySelector(".rank-scroll-track");
 let scrollAmount = 0;
 let isPaused = false;
@@ -2349,7 +2373,7 @@ slider.addEventListener("mouseleave", () => {
   isPaused = false;
 });
   </script>
-  <script>
+<script>
    document.querySelectorAll(".faq-q").forEach(q => {
   q.addEventListener("click", () => {
 
@@ -2363,7 +2387,7 @@ slider.addEventListener("mouseleave", () => {
   });
 });
   </script>
-  <script>
+<script>
    (function () {
 
   function getParam(param) {
@@ -2397,7 +2421,7 @@ if (!value && param === "utm_creative") {
     
     
     // NAME VALIDATION
-const name = form.querySelector("input[name='name']");
+const name = form.querySelector("input[name='Full Name']");
 
 if (name) {
   name.addEventListener("input", () => {
@@ -2411,25 +2435,30 @@ if (name) {
     name.value = name.value.slice(0, 50);
   });
 }
-    const mobile = form.querySelector("input[name='mobile']");
-    mobile.addEventListener("input", () => {
-      mobile.value = mobile.value.replace(/\D/g, "").slice(0,10);
-    });
+    const mobile = form.querySelector("input[name='Mobile Number']");
+    if(mobile) {
+      mobile.addEventListener("input", () => {
+        mobile.value = mobile.value.replace(/\D/g, "").slice(0,10);
+      });
+    }
 
     form.addEventListener("submit", function(e){
 
-      if(!/^[6-9]\d{9}$/.test(mobile.value)){
+      if(mobile && !/^[6-9]\d{9}$/.test(mobile.value)){
         alert("Enter valid 10 digit mobile number starting with 6-9");
         e.preventDefault();
         return;
       }
 
-      const email = form.querySelector("input[name='email']").value;
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const emailInput = form.querySelector("input[name='Email id']");
+      if(emailInput) {
+        const email = emailInput.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if(!emailRegex.test(email)){
-        alert("Enter valid email address");
-        e.preventDefault();
+        if(!emailRegex.test(email)){
+          alert("Enter valid email address");
+          e.preventDefault();
+        }
       }
 
     });
@@ -2446,7 +2475,7 @@ if (name) {
 
 })();
   </script>
-  <script>
+<script>
    document.addEventListener("DOMContentLoaded", function () {
 
   const forms = document.querySelectorAll(".lead-form");
@@ -2456,13 +2485,14 @@ if (name) {
     form.addEventListener("submit", function () {
 
       const submitBtn = form.querySelector(".prevent-multiple");
+      if(submitBtn) {
+        submitBtn.disabled = true;
 
-      submitBtn.disabled = true;
+        submitBtn.innerHTML = "Submitting...";
 
-      submitBtn.innerHTML = "Submitting...";
-
-      submitBtn.style.opacity = "0.7";
-      submitBtn.style.cursor = "not-allowed";
+        submitBtn.style.opacity = "0.7";
+        submitBtn.style.cursor = "not-allowed";
+      }
 
     });
 
@@ -2470,16 +2500,39 @@ if (name) {
 
 });
   </script>
-  <script>
+<script>
    'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl508715'},{'dcenter':'p3'},{'cp_id':'10967067'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
   </script>
-  <script src="js/tccl.min.js">
+<script src="js/tccl.min.js">
   </script>
-  <script charset="" id="" type="text/javascript">
+<script charset="" id="" type="text/javascript">
    !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1893666021343054");fbq("set","agent","tmgoogletagmanager","1893666021343054");fbq("track","PageView");
   </script>
-  <noscript>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwlFYv1It7fW-FNiPCW6BDtxmcUyszFnZi_POffU32UVwLcBzGQJmQnOp3-bptRFaL6Fg/exec'
+    
+    function handleFormSubmit(form) {
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(() => { 
+        alert("Thank you! We will contact you soon.") 
+        form.reset() 
+        document.getElementById("wsPopup").classList.remove("active"); // close popup
+      })
+      .catch(() => alert('Error! Please try again'))
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      handleFormSubmit(e.target);
+    });
+
+    document.getElementById('popupContactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      handleFormSubmit(e.target);
+    });
+  </script>
+<noscript>
    <img height="1" src="images/tr" style="display:none" width="1"/>
   </noscript>
- </body>
+</body>
 </html>
